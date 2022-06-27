@@ -79,7 +79,7 @@ html_css_files = ['custom.css']
 
 # Disable Sidebars on special pages
 html_sidebars = {
-    'cookbook-gallery': [],
+    'index': [],
 }
 
 # HTML Theme-specific Options

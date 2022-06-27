@@ -47,7 +47,7 @@ Packages
 :column: + tagged-card py-art radar
 
 <div class="d-flex gallery-card">
-<img src="/_static/images/thumbnails/arm_logo.png" class="gallery-thumbnail" />
+<img src="portal/_static/images/thumbnails/arm_logo.png" class="gallery-thumbnail" />
 <div class="container">
 <a href="https://projectpythiatutorials.github.io/radar-cookbook/landing-page.html" class="text-decoration-none"><h4 class="display-4 p-0">Radar Cookbook</h4></a>
 <p class="card-subtitle"><strong>Author:</strong> Max Grover<br/></p>
