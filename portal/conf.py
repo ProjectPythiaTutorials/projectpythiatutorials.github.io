@@ -104,7 +104,7 @@ html_theme_options = {
         {'name': 'Community', 'url': 'https://projectpythia.org/#join-us'},
     ],
     'page_layouts': {
-        'cookbook-gallery': 'page-standalone.html',
+        'index': 'page-standalone.html',
     },
     'footer_logos': {
         'NCAR': '_static/images/logos/NCAR-contemp-logo-blue.svg',
