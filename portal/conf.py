@@ -124,7 +124,3 @@ jupyter_execute_notebooks = 'off'
 myst_heading_anchors = 3
 
 # CUSTOM SCRIPTS ==============================================================
-
-# Copy root files into content pages ------------------------------------------
-
-shutil.copyfile('../CODEOFCONDUCT.md', 'code_of_conduct.md')
