@@ -31,7 +31,7 @@ jobs:
       - name: Build
         run: |
           conda env list
-          cd cookbooks
+          cd site
           make -j4 html
       - name: Zip the site
         run: |
@@ -40,7 +40,7 @@ jobs:
           if [ -f site.zip ]; then
               rm -rf site.zip
           fi
-          zip -r site.zip ./cookbooks/_build/html
+          zip -r site.zip ./site/_build/html
       - uses: actions/upload-artifact@v2
         with:
           name: site-zip
@@ -51,5 +51,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./cookbooks/_build/html
+          publish_dir: ./site/_build/html
           cname: tutorials.projectpythia.org

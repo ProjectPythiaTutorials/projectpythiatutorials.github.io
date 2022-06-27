@@ -94,7 +94,7 @@ jobs:
           && steps.find-pull-request.outputs.number != ''
           && steps.fc.outputs.comment-id != ''
         run: |
-          rm -rf ./cookbooks/_build/html
+          rm -rf ./site/_build/html
           unzip site.zip
           rm -f site.zip
       # Push the site's HTML to Netlify and get the preview URL
@@ -106,7 +106,7 @@ jobs:
         id: netlify
         uses: nwtgck/actions-netlify@v1.2
         with:
-          publish-dir: ./cookbooks/_build/html
+          publish-dir: ./site/_build/html
           production-deploy: false
           github-token: ${{ secrets.GITHUB_TOKEN }}
           enable-commit-comment: false
