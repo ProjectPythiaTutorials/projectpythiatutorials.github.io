@@ -8,7 +8,7 @@ on:
       - completed
 jobs:
   deploy:
-    if: github.repository == 'ProjectPythia/projectpythia.github.io'
+    if: github.repository == 'ProjectPythiaTutorials/projectpythiatutorials.github.io'
     runs-on: ubuntu-latest
     defaults:
       run:
