@@ -1,0 +1,5 @@
+name: pythia-cookbooks-dev
+channels:
+  - conda-forge
+  - pip:
+      - sphinx-pythia-theme
