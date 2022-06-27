@@ -8,5 +8,5 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-build/
+portal/_build/
 dist/
