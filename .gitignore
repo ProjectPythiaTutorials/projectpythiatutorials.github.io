@@ -8,5 +8,5 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-cookbooks/_build/
+site/_build/
 dist/
