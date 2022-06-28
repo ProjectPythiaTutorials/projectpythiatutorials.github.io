@@ -9,12 +9,13 @@ jobs:
     defaults:
       run:
         shell: bash -l {0}
-    if: github.repository == 'ProjectPythiaCookbooks/projectpythiacookbooks.github.io'
+    if: github.repository == 'ProjectPythiaTutorials/projectpythiatutorials.github.io'
     steps:
       - name: Cancel previous runs
         uses: styfle/cancel-workflow-action@0.9.1
         with:
           access_token: ${{ github.token }}
+
       - uses: actions/checkout@v2
 
       - uses: conda-incubator/setup-miniconda@master
@@ -33,6 +34,7 @@ jobs:
           conda env list
           cd site
           make -j4 html
+
       - name: Zip the site
         run: |
           set -x
@@ -41,6 +43,7 @@ jobs:
               rm -rf site.zip
           fi
           zip -r site.zip ./site/_build/html
+
       - uses: actions/upload-artifact@v2
         with:
           name: site-zip
@@ -52,4 +55,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./site/_build/html
-          cname: cookbooks.projectpythia.org
+          cname: tutorials.projectpythia.org
