@@ -1,5 +1,5 @@
 - title: Radar Cookbook
-  url: https://projectpythiatutorials.github.io/radar-cookbook/landing-page.html
+  url: https://cookbooks.projectpythia.org/radar-cookbook/README.html
   description: |
     This Project Pythia Cookbook covers the basics of working with weather radar data in Python.
   authors:
@@ -9,5 +9,5 @@
     domains:
     - radar
     packages:
-    - py-art
+    - Py-ART
     
