@@ -33,7 +33,7 @@ copyright = '2022'
 extensions = [
     'myst_nb',
     'sphinx_panels',
-    'tutorials_gallery_generator',
+    # 'tutorials_gallery_generator',
 ]
 
 # Define what extensions will parse which kind of source file
