@@ -14,7 +14,6 @@
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
 import os
-import shutil
 import sys
 
 sys.path.insert(0, os.path.abspath('_extensions'))
@@ -22,7 +21,7 @@ sys.path.insert(0, os.path.abspath('_extensions'))
 
 # -- Project information -----------------------------------------------------
 
-project = 'Project Pythia Cookbooks'
+project = 'Project Pythia Tutorials'
 author = 'the <a href="https://projectpythia.org/">Project Pythia</a> Community'
 copyright = '2022'
 
@@ -34,7 +33,7 @@ copyright = '2022'
 extensions = [
     'myst_nb',
     'sphinx_panels',
-    'cookbook_gallery_generator',
+    'tutorials_gallery_generator',
 ]
 
 # Define what extensions will parse which kind of source file
