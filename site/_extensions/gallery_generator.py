@@ -179,4 +179,3 @@ def build_from_items(items, filename, title='Gallery', subtitle=None, subtext=No
 """
 
     pathlib.Path(f'{filename}.md').write_text(panels)
-    

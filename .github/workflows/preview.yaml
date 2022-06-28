@@ -68,7 +68,7 @@ jobs:
             ${{ env.comment_message }}
 
             🚧 Deployment in progress for git commit SHA: ${{ steps.find-pull-request.outputs.sha }}
- 
+
       - name: Update comment
         if: |
           github.event.workflow_run.conclusion != 'success'
