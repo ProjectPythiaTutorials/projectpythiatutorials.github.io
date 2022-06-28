@@ -10,7 +10,7 @@ def main(app):
     title = 'Tutorials Gallery'
     subtext = 'Pythia Tutorials provide content for virtual tutorials.'
     menu_html = generate_menu(all_items)
-    build_from_items(all_items, 'index', title=title, subtext=subtext, menu_html=menu_html)
+    build_from_items(all_items, 'gallery', title=title, subtext=subtext, menu_html=menu_html)
 
 
 def setup(app):
