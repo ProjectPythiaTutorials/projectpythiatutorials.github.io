@@ -4,6 +4,13 @@
 
 Pythia Cookbooks provide example workflows on more advanced and domain-specific problems developed by the Pythia community. Cookbooks build on top of skills you learn in Pythia Foundations.
 
+Cookbooks are created from Jupyter Notebooks that we strive to *binderize*
+so each Cookbook can be executed in the cloud with a single click from your
+browswer. See documentation
+[here](https://foundations.projectpythia.org/preamble/how-to-use.html#interacting-with-jupyter-notebooks-in-the-cloud-via-binder)
+for details. In some instances executing a Cookbook will require downloading
+the Notebook to your local laptop or desktop as described [here](https://foundations.projectpythia.org/preamble/how-to-use.html#interacting-with-jupyter-books-locally).
+
 <div class="d-sm-flex mt-3 mb-4">
 <div class="d-flex gallery-menu">
 </div>
