@@ -41,7 +41,7 @@ jobs:
               rm -rf site.zip
           fi
           zip -r site.zip ./site/_build/html
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: site-zip
           path: ./site.zip
