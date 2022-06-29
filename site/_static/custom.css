@@ -119,3 +119,11 @@ main.banner-main #project-pythia {
     width: 0px;
   }
   
+.badge.mybadges {
+  margin-bottom: 0;
+  font-weight: 0;
+}
+
+.tagsandbadges {
+  padding: 0 0;
+}

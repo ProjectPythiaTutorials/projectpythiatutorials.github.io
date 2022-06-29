@@ -5,6 +5,29 @@ from textwrap import dedent
 from truncatehtml import truncate
 
 
+def _generate_url_from_repo(repo):
+    cookbook_url = f'https://cookbooks.projectpythia.org/{repo}/README.html'
+    return cookbook_url
+
+
+def _generate_github_url_from_repo(repo):
+    github_url = f'https://github.com/ProjectPythiaCookbooks/{repo}'
+    return github_url
+
+
+#def _get_thumbnail_url(repo):
+#    github_url = _generate_github_url_from_repo(repo)
+#    return f'{github_url}/thumbnail.png'
+
+
+def _generate_status_badge_html(repo):
+    github_url = _generate_github_url_from_repo(repo)
+
+    return f"""
+    <a class="reference external" href="{github_url}/actions/workflows/nightly-build.yaml"><img alt="nightly-build" src="{github_url}/actions/workflows/nightly-build.yaml/badge.svg" /></a>
+    <a class="reference external" href="https://binder-staging.2i2c.cloud/v2/gh/ProjectPythiaTutorials/{repo}.git/main"><img alt="Binder" src="https://binder-staging.2i2c.cloud/badge_logo.svg" /></a>
+    """
+
 def _generate_sorted_tag_keys(all_items):
 
     key_set = set(itertools.chain(*[item['tags'].keys() for item in all_items]))
@@ -71,13 +94,19 @@ def build_from_items(items, filename, title='Gallery', subtitle=None, subtext=No
     # Build the gallery file
     panels_body = []
     for item in items:
+        repo = item['repo']
+        #thumbnail = _get_thumbnail_url(repo)
+        cookbook_url = _generate_url_from_repo(repo)
+        status_badges = _generate_status_badge_html(repo)
+
         if not item.get('thumbnail'):
             item['thumbnail'] = '/_static/images/ebp-logo.png'
         thumbnail = item['thumbnail']
+
         tag_list = sorted((itertools.chain(*item['tags'].values())))
         tag_list_f = [tag.replace(' ', '-') for tag in tag_list]
 
-        tags = [f'<span class="badge bg-primary">{tag}</span>' for tag in tag_list_f]
+        tags = [f'<span class="badge bg-primary mybadges">{tag}</span>' for tag in tag_list_f]
         tags = '\n'.join(tags)
 
         tag_class_str = ' '.join(tag_list_f)
@@ -122,7 +151,7 @@ def build_from_items(items, filename, title='Gallery', subtitle=None, subtext=No
 {institutions_str}
 <p class="my-2">{item['description']}</p>
 <p class="my-2">{tags}</p>
-<p class="mt-3 mb-0"><a href="{item["url"]}" class="btn btn-outline-primary btn-block">Visit Website</a></p>
+<p class="mt-3 mb-0"><a href="{cookbook_url}" class="btn btn-outline-primary btn-block">Visit Website</a></p>
 </div>
 </div>
 """
@@ -137,7 +166,7 @@ def build_from_items(items, filename, title='Gallery', subtitle=None, subtext=No
 <div class="d-flex gallery-card">
 <img src="{thumbnail}" class="gallery-thumbnail" />
 <div class="container">
-<a href="{item["url"]}" class="text-decoration-none"><h4 class="display-4 p-0">{item["title"]}</h4></a>
+<a href="{cookbook_url}" class="text-decoration-none"><h4 class="display-4 p-0">{item["title"]}</h4></a>
 <p class="card-subtitle">{authors_str}<br/>{institutions_str}</p>
 <p class="my-2">{short_description}</p>
 </div>
@@ -145,8 +174,10 @@ def build_from_items(items, filename, title='Gallery', subtitle=None, subtext=No
 {modal_str}
 
 +++
-
+<div class="tagsandbadges">
 {tags}
+<div{status_badges}</div>
+</div>
 
 """
         )

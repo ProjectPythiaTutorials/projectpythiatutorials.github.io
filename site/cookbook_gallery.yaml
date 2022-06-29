@@ -1,5 +1,5 @@
 - title: Radar Cookbook
-  url: https://cookbooks.projectpythia.org/radar-cookbook/README.html
+  repo: radar-cookbook
   description: |
     This Project Pythia Cookbook covers the basics of working with weather radar data in Python.
   authors:
